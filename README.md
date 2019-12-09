@@ -70,8 +70,8 @@ yarn run ios
 Some screenshots of the application on iOS Simulator:
 
 <p align="middle">
-  <img src="https://raw.githubusercontent.com/vormium/notebuk/master/screenshots/notes%20list.png" width="280" />
-  <img src="https://raw.githubusercontent.com/vormium/notebuk/master/screenshots/note.png" width="280" /> 
+  <img src="https://github.com/vormium/CarsMap/blob/master/screenshots/list.png?raw=true" width="300" />
+  <img src="https://github.com/vormium/CarsMap/blob/master/screenshots/map.png?raw=true" width="300" /> 
 </p>
 
 ### Debugging
