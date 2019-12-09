@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, FlatList, Text, StyleSheet, Dimensions} from 'react-native';
+import {View, FlatList, StyleSheet, Dimensions} from 'react-native';
 
 import CarCard from './CarCard';
 

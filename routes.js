@@ -1,5 +1,5 @@
 import React from 'react';
-import { createAppContainer, createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import { Entypo } from '@expo/vector-icons';
 
 import CarsMapView from './screens/CarsMapView';
@@ -26,7 +26,6 @@ const TabNavigator = createBottomTabNavigator(
           iconName = 'list';
         }
 
-        // You can return any component that you like here!
         return <Entypo name={iconName} size={26} color={tintColor} />;
       },
     }),

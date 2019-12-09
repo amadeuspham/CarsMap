@@ -20,6 +20,7 @@ export default class CarsListView extends React.Component {
 		},
 		pickingPin: false,
 		marginBottom: 1,
+		pinRefs: []
 	};
 
 	async componentDidMount(){
@@ -57,8 +58,8 @@ export default class CarsListView extends React.Component {
 	renderPin = (placemark) => {
 		const coord = {
 			latitude: placemark.coordinates[1],
-			longitude: placemark.coordinates[0]}
-		;
+			longitude: placemark.coordinates[0]
+		};
 
 		return (
 	    <Marker
