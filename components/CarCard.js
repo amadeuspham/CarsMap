@@ -1,55 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, LayoutAnimation} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import CarDetails from './CarDetails';
 
-export default class CarCard extends React.PureComponent {
+export default function CarCard(props) {
+	const [cardOpened, setCardOpened] = useState(false);
 
-	state = {
-		cardOpened: false,
-	};
-
-	componentDidUpdate(){
+	useEffect(() => {
 		const animation = LayoutAnimation.create(
 			200,
 			LayoutAnimation.Types.easeInEaseOut,
 			LayoutAnimation.Properties.scaleY,
 		);
-
 		LayoutAnimation.configureNext(animation);
-	}
+	});
 
-	render() {
-		const {carInfo} = this.props;
-		const {cardOpened} = this.state;
+	const {carInfo} = props;
 
-		return (
-			<View style={styles.container}>
-				<TouchableOpacity 
-					style={styles.card}
-					onPress={() => this.setState({cardOpened: !cardOpened})}
-				>
-					<View style={{flexDirection: 'row', alignItems: 'center'}}>
-						<Ionicons 
-							name='md-car' 
-							size={30} 
-							style={{ marginRight: 10, color: 'indigo' }}
-						/>
-						<Text style={{fontSize: 16}}>{carInfo.name}</Text>
-					</View>
+	return (
+		<View style={styles.container}>
+			<TouchableOpacity 
+				style={styles.card}
+				onPress={() => setCardOpened(!cardOpened)}
+			>
+				<View style={{flexDirection: 'row', alignItems: 'center'}}>
 					<Ionicons 
-						name={cardOpened ? 'md-arrow-dropup' : 'md-arrow-dropdown'} 
+						name='md-car' 
 						size={30} 
-						style={{ color: 'indigo' }}
+						style={{ marginRight: 10, color: 'indigo' }}
 					/>
-				</TouchableOpacity>
-				{cardOpened &&
-					<CarDetails carInfo={carInfo}/>
-				}
-			</View>
-		);
-	}
+					<Text style={{fontSize: 16}}>{carInfo.name}</Text>
+				</View>
+				<Ionicons 
+					name={cardOpened ? 'md-arrow-dropup' : 'md-arrow-dropdown'} 
+					size={30} 
+					style={{ color: 'indigo' }}
+				/>
+			</TouchableOpacity>
+			{cardOpened &&
+				<CarDetails carInfo={carInfo}/>
+			}
+		</View>
+	);
 }
 
 const styles = StyleSheet.create({

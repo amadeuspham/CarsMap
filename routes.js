@@ -8,10 +8,10 @@ import CarsListView from './screens/CarsListView';
 const TabNavigator = createBottomTabNavigator(
   {
 		CarsListView: {
-			screen: CarsListView,
+			screen: screenProps => <CarsListView carsPlacemarks={screenProps.screenProps.carsPlacemarks}/>,
 		},
 		CarsMapView: {
-			screen: CarsMapView,
+			screen: screenProps => <CarsMapView carsPlacemarks={screenProps.screenProps.carsPins}/>,
 		},
 	},
 	{

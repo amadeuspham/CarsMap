@@ -3,7 +3,7 @@ import {View, FlatList, StyleSheet, Dimensions} from 'react-native';
 
 import CarCard from './CarCard';
 
-export default class CarsList extends React.Component {
+export default function CarsList(props) {
 
 	keyExtractor = (item) => item.vin;
 
@@ -21,19 +21,17 @@ export default class CarsList extends React.Component {
 		);
 	}
 
-	render(){
-		const {carsPlacemarks} = this.props;
+	const {carsPlacemarks} = props;
 
-		return (
-			<FlatList
-				style={styles.containerList}
-				data={carsPlacemarks}
-				keyExtractor={this.keyExtractor}
-				renderItem={this.renderItem}
-				ItemSeparatorComponent={this.listItemSeparator}
-			/>
-		);
-	}
+	return (
+		<FlatList
+			style={styles.containerList}
+			data={carsPlacemarks}
+			keyExtractor={this.keyExtractor}
+			renderItem={this.renderItem}
+			ItemSeparatorComponent={this.listItemSeparator}
+		/>
+	);
 }
 
 const styles = StyleSheet.create({
