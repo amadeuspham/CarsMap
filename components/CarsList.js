@@ -27,9 +27,9 @@ export default function CarsList(props) {
 		<FlatList
 			style={styles.containerList}
 			data={carsPlacemarks}
-			keyExtractor={this.keyExtractor}
-			renderItem={this.renderItem}
-			ItemSeparatorComponent={this.listItemSeparator}
+			keyExtractor={keyExtractor}
+			renderItem={renderItem}
+			ItemSeparatorComponent={listItemSeparator}
 		/>
 	);
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {SafeAreaView, StyleSheet, StatusBar} from 'react-native';
-import MapView, {Marker, Callout} from 'react-native-maps';
+import {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
+import MapView from '@bam.tech/react-native-component-map-clustering';
 import { Ionicons } from '@expo/vector-icons';
 
 const initialRegion = {
@@ -11,7 +12,6 @@ const initialRegion = {
 };
 
 export default function CarsMapView(props) {
-	console.log("render")
 	const [appearingPlacemark, setAppearingPlacemark] = useState();
 	const [pickingPin, setPickingPin] = useState(false);
 	const [marginBottom, setMarginBottom] = useState(1);
@@ -28,7 +28,7 @@ export default function CarsMapView(props) {
 		return (
 	    <Marker
 	    	ref={ref => { this.chosenCar = ref }}
-	    	key={placemark.vin}
+	    	key={placemark.id}
 	      coordinate={coord}
 	      title={placemark.name}
 	      onPress={onPinChosen}
@@ -64,11 +64,12 @@ export default function CarsMapView(props) {
 			<MapView
 				style={{flex: 1, marginBottom: marginBottom}}
   			onMapReady={onMapReady} 
-  			provider='google' // user location button only works when Google Maps is used
+  			provider={PROVIDER_GOOGLE} // user location button only works when Google Maps is used
   												// tap the pin again to close car name only works with Google Maps
 	      initialRegion={initialRegion}
 	      showsUserLocation={true}
 	      showsMyLocationButton={true}
+	      clustering={true}
 	    >
 	    	{pickingPin ? renderPin(appearingPlacemark) : props.carsPlacemarks.map(renderPin)}
 	    </MapView>

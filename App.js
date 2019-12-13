@@ -24,7 +24,7 @@ export default function App() {
 	filterMapInfo = (carInfo) => {
 		return {
 			coordinates: carInfo.coordinates,
-			vin: carInfo.vin,
+			id: carInfo.vin,
 			name: carInfo.name
 		};
 	};
