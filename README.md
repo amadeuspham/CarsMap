@@ -12,8 +12,8 @@ A simple React Native mobile app displaying cars information in a list and on a 
 
 ## Getting Started
 ```bash
-git clone https://github.com/amadeuspham/CarsMap
-cd CarsMap
+git clone https://github.com/amadeuspham/CarsMapv2
+cd CarsMapv2
 ```
 
 ### Requirements
