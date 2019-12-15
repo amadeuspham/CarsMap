@@ -72,7 +72,8 @@ Some screenshots of the application on iOS Simulator:
 
 <p align="middle">
   <img src="https://github.com/vormium/CarsMap/blob/master/screenshots/list.png?raw=true" width="300" />
-  <img src="https://github.com/vormium/CarsMap/blob/master/screenshots/map.png?raw=true" width="300" /> 
+  <img src="https://github.com/amadeuspham/CarsMapv2/blob/master/screenshots/map-cluster.png?raw=true" width="300" /> 
+  <img src="https://github.com/amadeuspham/CarsMapv2/blob/master/screenshots/map-single.png?raw=true" width="300" /> 
 </p>
 
 ### Debugging
