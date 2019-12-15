@@ -1,5 +1,5 @@
 # CarsMap
-A simple React Native mobile app displaying cars information in a list and on a map, similar to ridesharing applications.
+A simple React Native mobile app displaying cars information in a list and on a map, similar to ridesharing applications. The cars' information is static, and stored in assets/locations.json
 
 ## Table of Contents
 - [Getting Started](#getting-started)
@@ -66,6 +66,7 @@ Alternatively, you can run the app in the Simulator on your macOS workstation, e
 ```bash
 yarn run ios
 ```
+However, viewing this app on the Simulator is discouraged, since Google Maps will be slow and lagging on iOS Simulator.
 
 Some screenshots of the application on iOS Simulator:
 

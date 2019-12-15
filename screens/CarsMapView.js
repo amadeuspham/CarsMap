@@ -32,6 +32,7 @@ export default function CarsMapView(props) {
 	      coordinate={coord}
 	      title={placemark.name}
 	      onPress={onPinChosen}
+	      tracksViewChanges={false}
 	    >
 	    	<Ionicons 
 					name='md-car'
@@ -64,8 +65,9 @@ export default function CarsMapView(props) {
 			<MapView
 				style={{flex: 1, marginBottom: marginBottom}}
   			onMapReady={onMapReady} 
-  			provider={PROVIDER_GOOGLE} // user location button only works when Google Maps is used
-  												// tap the pin again to close car name only works with Google Maps
+  			provider='google'
+				// user location button only works when Google Maps is used
+				// tap the pin again to close car name only works with Google Maps
 	      initialRegion={initialRegion}
 	      showsUserLocation={true}
 	      showsMyLocationButton={true}
