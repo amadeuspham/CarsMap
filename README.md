@@ -12,8 +12,8 @@ A simple React Native mobile app displaying cars information in a list and on a 
 
 ## Getting Started
 ```bash
-git clone https://github.com/vormium/notebuk.git
-cd notebuk
+git clone https://github.com/amadeuspham/CarsMap
+cd CarsMap
 ```
 
 ### Requirements
