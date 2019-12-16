@@ -4,6 +4,8 @@ import {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import MapView from '@bam.tech/react-native-component-map-clustering';
 import { Ionicons } from '@expo/vector-icons';
 
+import {carPinInfo} from "../App"
+
 const initialRegion = {
 	latitude: 53.57213,
   longitude: 10.043035,
@@ -11,15 +13,21 @@ const initialRegion = {
   longitudeDelta: 0.178945,
 };
 
-export default function CarsMapView(props) {
+interface Props {
+	carsPlacemarks: Array<carPinInfo>
+}
+
+var chosenCar: Marker | null;
+
+export default function CarsMapView(props: Props) {
 	const [appearingPlacemark, setAppearingPlacemark] = useState();
 	const [pickingPin, setPickingPin] = useState(false);
 	const [marginBottom, setMarginBottom] = useState(1);
 
 	// adjust the map margin to display the user location button
-	onMapReady = () => setMarginBottom(0);
+	const onMapReady = () => setMarginBottom(0);
 
-	renderPin = (placemark) => {
+	const renderPin = (placemark: carPinInfo) => {
 		const coord = {
 			latitude: placemark.coordinates[1],
 			longitude: placemark.coordinates[0]
@@ -27,7 +35,7 @@ export default function CarsMapView(props) {
 
 		return (
 	    <Marker
-	    	ref={ref => { this.chosenCar = ref }}
+	    	ref={ref => { chosenCar = ref }}
 	    	key={placemark.id}
 	      coordinate={coord}
 	      title={placemark.name}
@@ -43,7 +51,7 @@ export default function CarsMapView(props) {
 	  );
 	}
 
-	onPinChosen = (e) => {
+	const onPinChosen = (e: any) => {
 		if (!pickingPin) {
 			const coordinate = e.nativeEvent.coordinate;
 			const chosenPin = props.carsPlacemarks.find(function(placemark) {
@@ -54,7 +62,7 @@ export default function CarsMapView(props) {
 			setAppearingPlacemark(chosenPin);
 			setPickingPin(true);
 		} else {
-			this.chosenCar.hideCallout();
+			if (chosenCar) chosenCar.hideCallout();
 			setPickingPin(false);
 		}
 	}

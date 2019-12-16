@@ -4,7 +4,7 @@ import {View, FlatList, StyleSheet, Dimensions} from 'react-native';
 import CarCard from './CarCard';
 
 export default function CarsList(props) {
-
+	console.log("update list")
 	keyExtractor = (item) => item.vin;
 
 	listItemSeparator = () => {
@@ -30,6 +30,7 @@ export default function CarsList(props) {
 			keyExtractor={keyExtractor}
 			renderItem={renderItem}
 			ItemSeparatorComponent={listItemSeparator}
+			removeClippedSubviews={true}
 		/>
 	);
 }

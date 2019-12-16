@@ -2,8 +2,14 @@ import React from 'react';
 import {SafeAreaView, StyleSheet, StatusBar} from 'react-native';
 
 import CarsList from '../components/CarsList';
+import {carInfo} from '../App';
 
-export default function CarsListView(props) {
+interface Props {
+	carsPlacemarks: Array<carInfo>
+}
+
+export default function CarsListView(props: Props) {
+	console.log("update view")
 	return(
 		<SafeAreaView style={styles.container}>
 			<StatusBar barStyle="dark-content" />

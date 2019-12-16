@@ -1,20 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, LayoutAnimation} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import CarDetails from './CarDetails';
 
-export default function CarCard(props) {
+function CarLabel(props) {
 	const [cardOpened, setCardOpened] = useState(false);
-
-	useEffect(() => {
-		const animation = LayoutAnimation.create(
-			200,
-			LayoutAnimation.Types.easeInEaseOut,
-			LayoutAnimation.Properties.scaleY,
-		);
-		LayoutAnimation.configureNext(animation);
-	});
 
 	const {carInfo} = props;
 
@@ -59,3 +50,5 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
 	},
 });
+
+export default CarCard = React.memo(CarLabel);
