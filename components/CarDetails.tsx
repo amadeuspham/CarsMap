@@ -1,7 +1,13 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-export default function CarDetails(props) {
+import {carInfo} from '../App';
+
+interface Props {
+	carInfo: carInfo
+}
+
+export default function CarDetails(props: Props) {
 	const {carInfo} = props;
 
 	return(

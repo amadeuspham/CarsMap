@@ -2,18 +2,22 @@ import React from 'react';
 import {View, FlatList, StyleSheet, Dimensions} from 'react-native';
 
 import CarCard from './CarCard';
+import {carInfo} from '../App';
 
-export default function CarsList(props) {
-	console.log("update list")
-	keyExtractor = (item) => item.vin;
+interface Props {
+	carsPlacemarks: Array<carInfo>
+}
 
-	listItemSeparator = () => {
+export default function CarsList(props: Props) {
+	const keyExtractor = (item: any) => item.vin;
+
+	const listItemSeparator = () => {
 		return (
 			<View style={styles.listSeparator}/>
 		);
 	}
 		
-	renderItem = (listItem) => {
+	const renderItem = (listItem: any) => {
 		const carInfo = listItem.item;
 
 		return (

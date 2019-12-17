@@ -3,8 +3,13 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import CarDetails from './CarDetails';
+import {carInfo} from '../App';
 
-function CarLabel(props) {
+interface Props {
+	carInfo: carInfo
+}
+
+function CarLabel(props: Props) {
 	const [cardOpened, setCardOpened] = useState(false);
 
 	const {carInfo} = props;
@@ -51,4 +56,5 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default CarCard = React.memo(CarLabel);
+const CarCard = React.memo(CarLabel);
+export default CarCard;

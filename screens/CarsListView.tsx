@@ -9,7 +9,6 @@ interface Props {
 }
 
 export default function CarsListView(props: Props) {
-	console.log("update view")
 	return(
 		<SafeAreaView style={styles.container}>
 			<StatusBar barStyle="dark-content" />
